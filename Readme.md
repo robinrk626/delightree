@@ -1,31 +1,44 @@
-Features:
-    getCustomerSpending by customerId
-    getTopSellingProducts by limit and pageNumber, (pagination support default pageNumber 1)
-    getSalesAnalytics(startDate, endDate) get stats analytics in given time range
-    getCustomerOrders(customerId, limit, pageNumber) get all orders by customerId with pagination (default pageNumber 1) 
-    createOrder([products])  create new order and reduce stock for ordered product items 
+# Project README
 
-install dependencies by ` npm i`
+## Features
+- **getCustomerSpending(customerId!)**: Retrieve the total spending of a customer by their ID.
+- **getTopSellingProducts(limit!, pageNumber)**: Fetch the top-selling products with pagination support. (Default: `pageNumber = 1`)
+- **getSalesAnalytics(startDate!, endDate!)**: Get sales statistics within a given time range.
+- **getCustomerOrders(customerId!, limit!, pageNumber)**: Fetch all orders placed by a customer with pagination support. (Default: `pageNumber = 1`)
+- **createOrder([products])**: Create a new order and reduce stock for ordered product items.
 
-copy config/example.config.json and make config/development.config.json
-values of development.config.json:
-{
-  "PORT": 4000,
-  "database": {
-      "username": "robingarg6626",
-      "password": "2lnj0PP0Tz5cpySd",
-      "databaseName": "atoz"
-  },
-  "redisConnection": {
-      "port": 6379,
-      "hostname": "localhost"
-  },
-  "jwt": {
-      "secret": "iiuuyytre"
-  }
-}
+## Installation
+1. Install dependencies:
+   ```
+   npm install
+   ```
+2. Set up configuration:
+   - Copy the example config file:
+     ```
+     cp config/example.config.json config/development.config.json
+     ```
+   - Update `config/development.config.json` with your configuration values:
+     ```json
+     {
+       "PORT": 4000,
+       "database": {
+         "username": "<your_database_username>",
+         "password": "<your_database_password>",
+         "databaseName": "<databaseName>"
+       },
+       "redisConnection": {
+         "port": 6379,
+         "hostname": "localhost"
+       },
+       "jwt": {
+         "secret": "<your_jwt_secret>"
+       }
+     }
+     ```
+## Running the Server
+To start the server, use the following command:
+```
+npm run start
+```
 
-run command to run the server  `npm run start`
-
-
-
+---
