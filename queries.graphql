@@ -1,0 +1,41 @@
+getCustomerSpending
+{
+    "query": "query ($customerId: ID!) {getCustomerSpending(customerId: $customerId) { customerId totalSpent averageOrderValue lastOrderDate  } }",
+    "variables": {"customerId": "adf96a4e-6987-4731-8798-09b109ff65c3"}
+}
+
+
+getSalesAnalytics
+{
+    "query": "query ($startDate: String!, $endDate: String!) {getSalesAnalytics(startDate: $startDate, endDate: $endDate) { totalRevenue completedOrders categoryBreakdown {category}  } }",
+    "variables": {"startDate": "2024-12-12T10:35:58.472", "endDate": "2024-12-16T10:35:58.472"}
+}
+
+
+getTopSellingProducts
+{
+    "query": "query ($limit: Int!, $pageNumber: Int) {getTopSellingProducts(limit: $limit, pageNumber: $pageNumber) { productId name totalSold } }",
+    "variables": {"limit": 2, "pageNumber": 1}
+}
+
+{
+    "query": "query ($limit: Int!) {getTopSellingProducts(limit: $limit) { productId name totalSold } }",
+    "variables": {"limit": 2, "pageNumber": 1}
+}
+
+
+
+getCustomerOrders
+{
+  "query": "query ($customerId: ID!, $limit: Int!, $page: Int) { getCustomerOrders(customerId: $customerId, limit: $limit, pageNumber: $page) { orders { totalAmount orderDate status products { name quantity priceAtPurchase } } } }",
+  "variables": {
+    "customerId": "adf96a4e-6987-4731-8798-09b109ff65c3",
+    "limit": 1,
+    "page": 4
+  }
+}
+
+
+
+
+createOrder

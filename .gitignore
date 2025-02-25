@@ -1,0 +1,4 @@
+node_modules
+
+config/development.config.json
+package-lock.json
