@@ -39,3 +39,15 @@ getCustomerOrders
 
 
 createOrder
+{
+  "query": "mutation ($products: [OrderedProductInput!]!) { createOrder(products: $products) }",
+  "variables": {
+    "products": [
+      {
+        "productId": "570f3f7a-6ba2-4019-8caa-06709bf9ea71",
+        "quantity": 2,
+        "priceAtPurchase": 100.0
+      }
+    ]
+  }
+}
